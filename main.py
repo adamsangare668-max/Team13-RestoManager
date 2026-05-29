@@ -89,7 +89,7 @@ def get_reservation_date(restaurant: Restaurant) -> tuple[str, object]:
 
         selected_day_name = restaurant.WORKING_DAYS[reservation_date.weekday()]
         print(
-            f"  ✅  Selected date: {reservation_date} "
+            f"  Selected date: {reservation_date} "
             f"({selected_day_name})"
         )
         return reservation_date.strftime("%Y-%m-%d"), reservation_date
@@ -101,7 +101,7 @@ def handle_reservation(restaurant: Restaurant) -> None:
     Shows available tables, collects booking details, and confirms.
     """
     print("\n  ══════════════════════════════════════════════════")
-    print(f"  {'🪑  TABLE RESERVATION':^48}")
+    print(f"  {'  TABLE RESERVATION':^48}")
     print("  ══════════════════════════════════════════════════")
 
     # Collect customer info
@@ -138,7 +138,7 @@ def handle_reservation(restaurant: Restaurant) -> None:
         visit_time = f"{h:02d}:{m:02d}"
         break
 
-    print(f"\n  ✅  Reservation requested for {visit_date_obj.strftime('%A %d/%m/%Y')} at {visit_time}.")
+    print(f"\n    Reservation requested for {visit_date_obj.strftime('%A %d/%m/%Y')} at {visit_time}.")
 
     # Ask for the duration of the reservation
     while True:
@@ -160,7 +160,7 @@ def handle_reservation(restaurant: Restaurant) -> None:
     # Check if any table is available for this time slot
     available: list = restaurant.get_available_tables(visit_date, visit_time, duration)
     if not available:
-        print("  ❌  Sorry, no tables are available for that date and time.")
+        print("    Sorry, no tables are available for that date and time.")
         return
 
     # Show available tables for this time slot
@@ -172,7 +172,7 @@ def handle_reservation(restaurant: Restaurant) -> None:
             table_no: int = int(input("\n  Table number to reserve : ").strip())
             break
         except ValueError:
-            print("  ⚠  Please enter a valid number.")
+            print("    Please enter a valid number.")
 
     # Ask how many guests will be attending
     while True:
@@ -180,9 +180,9 @@ def handle_reservation(restaurant: Restaurant) -> None:
             guests: int = int(input("  Number of guests                              : ").strip())
             if guests >= 1:
                 break
-            print("  ⚠  At least 1 guest is required.")
+            print("    At least 1 guest is required.")
         except ValueError:
-            print("  ⚠  Please enter a valid number.")
+            print("    Please enter a valid number.")
 
     # Attempt to create the reservation in the restaurant controller
     reservation = restaurant.make_reservation(
@@ -193,7 +193,7 @@ def handle_reservation(restaurant: Restaurant) -> None:
     if reservation:
         reservation.display_receipt()
     else:
-        print("\n  ❌  Reservation could not be completed. Please try again.\n")
+        print("\n    Reservation could not be completed. Please try again.\n")
 
 
 def handle_order(restaurant: Restaurant) -> None:
@@ -202,7 +202,7 @@ def handle_order(restaurant: Restaurant) -> None:
     Displays menus, collects item selections, and prints the receipt.
     """
     print("\n  ══════════════════════════════════════════════════")
-    print(f"  {'🍽  FOOD & DRINK ORDER':^48}")
+    print(f"  {'  FOOD & DRINK ORDER':^48}")
     print("  ══════════════════════════════════════════════════")
 
     # Get customer info before showing the menu
@@ -242,7 +242,7 @@ def handle_order(restaurant: Restaurant) -> None:
     # Ask the customer to confirm before placing the order
     confirm: str = input("\n  Confirm order? (yes / no) : ").strip().lower()
     if confirm not in ("yes", "y", "oui", "o"):
-        print("  ❌  Order cancelled.\n")
+        print("    Order cancelled.\n")
         return
 
     # Place the order through the restaurant controller
@@ -272,7 +272,7 @@ def display_restaurant_info(restaurant: Restaurant) -> None:
     """
     stats: dict = restaurant.get_statistics()
     now_str: str = datetime.now().strftime("%A %d %B %Y — %H:%M")
-    status: str = "🟢  OPEN" if restaurant.is_open() else "🔴  CLOSED"
+    status: str = "  OPEN" if restaurant.is_open() else "  CLOSED"
 
     print("\n  ══════════════════════════════════════════════════")
     print(f"  {'RESTAURANT INFORMATION':^48}")
@@ -332,12 +332,12 @@ def main() -> None:
         elif choice == "0":
             # Log the exit and close the application
             FileManager.write_log("Application closed by user.")
-            print("\n  Thank you for visiting RestoManagerG13! Goodbye! 👋\n")
+            print("\n  Thank you for visiting RestoManagerG13! Goodbye! \n")
             sys.exit(0)
 
         else:
             # Invalid input — prompt again
-            print("  ⚠  Invalid choice. Please enter a number from 0 to 5.")
+            print("   Invalid choice. Please enter a number from 0 to 5.")
 
 
 # Program entry point
