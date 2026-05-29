@@ -126,13 +126,13 @@ def handle_reservation(restaurant: Restaurant) -> None:
             if not (0 <= h <= 23 and 0 <= m <= 59):
                 raise ValueError
         except (ValueError, IndexError):
-            print("  ⚠  Invalid time format. Please use HH:MM.")
+            print("    Invalid time format. Please use HH:MM.")
             continue
 
         # Combine reservation date and the provided time; ensure not in the past
         reservation_dt = datetime.combine(visit_date_obj, datetime.min.time()).replace(hour=h, minute=m)
         if reservation_dt < datetime.now():
-            print("  ⚠  You cannot reserve for a past time. Please choose a future date/time.")
+            print("    You cannot reserve for a past time. Please choose a future date/time.")
             continue
 
         visit_time = f"{h:02d}:{m:02d}"
@@ -153,9 +153,9 @@ def handle_reservation(restaurant: Restaurant) -> None:
             duration = int(duration_input)
             if 1 <= duration <= 12:
                 break
-            print("  ⚠  Duration must be between 1 and 12 hours.")
+            print("    Duration must be between 1 and 12 hours.")
         except ValueError:
-            print("  ⚠  Enter a valid hour count or press Enter for 2 hours.")
+            print("    Enter a valid hour count or press Enter for 2 hours.")
 
     # Check if any table is available for this time slot
     available: list = restaurant.get_available_tables(visit_date, visit_time, duration)
@@ -236,7 +236,7 @@ def handle_order(restaurant: Restaurant) -> None:
 
     # At least one item must be selected
     if not food_ids and not drink_ids:
-        print("\n  ⚠  No items selected. Order cancelled.\n")
+        print("\n  No items selected. Order cancelled.\n")
         return
 
     # Ask the customer to confirm before placing the order
