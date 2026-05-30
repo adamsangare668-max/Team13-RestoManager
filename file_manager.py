@@ -76,3 +76,55 @@ class FileManager:
         Returns an empty list if no reservations have been saved yet.
         """
         return FileManager.__read_data_file(RESERVATIONS_FILE)
+
+    # Order file methods
+
+    @staticmethod
+    def save_order(order_dict: dict) -> None:
+        """
+        Add a new order to the orders file.
+        Loads existing records, appends the new one, then saves everything.
+        """
+        existing: list = FileManager.__read_data_file(ORDERS_FILE)
+        existing.append(order_dict)     # add the new order
+        FileManager.__write_data_file(ORDERS_FILE, existing)
+
+    @staticmethod
+    def load_orders() -> list:
+        """
+        Load and return all saved orders as a list of dictionaries.
+        Returns an empty list if no orders have been saved yet.
+        """
+        return FileManager.__read_data_file(ORDERS_FILE)
+
+    # Activity log
+
+    @staticmethod
+    def write_log(message: str) -> None:
+        """
+        Append a timestamped message to the plain-text activity log.
+        This records every significant action (reservation, order, start, exit).
+        """
+        FileManager.ensure_data_directory()
+        timestamp: str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        log_entry: str = f"[{timestamp}]  {message}\n"
+
+        # Open in append mode so previous entries are not overwritten
+        with open(LOG_FILE, "a", encoding="utf-8") as log_file:
+            log_file.write(log_entry)
+
+    # Summary
+
+    @staticmethod
+    def get_summary() -> dict:
+        """
+        Return a dictionary with the total count of saved reservations and orders.
+        Used by the restaurant controller to show statistics.
+        """
+        reservations: list = FileManager.load_reservations()
+        orders: list = FileManager.load_orders()
+
+        return {
+            "total_reservations": len(reservations),
+            "total_orders": len(orders)
+        }
