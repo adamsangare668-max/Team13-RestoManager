@@ -151,9 +151,9 @@ Menu
 
 | Name | Role | GitHub Profile |
 |---|---|---|
-| Adam | Group Leader — main.py | [github.com/adam](https://github.com/adamsangare668-max) |
-| Rafiou | restaurant_ctrl.py | [github.com/rafiou](https://github.com/SANDWIDI-Rafiou-beep) |
-| Pulcherie | file_manager.py | [github.com/pulcherie](https://github.com/sawadogopulcherie544-art) |
-| Aimerance | menu.py | [github.com/aimerance](https://github.com/sanashekiniaaimerence-cmyk) |
-| Eunice | person.py | [github.com/eunice](https://github.com/eunicesanou099-arch) |
-| Oumou | reservation.py | [github.com/oumou](https://github.com/oumou-savadogo) |
+| Adam SANGARE | Group Leader — main.py | [github.com/adam](https://github.com/adamsangare668-max) |
+| Rafiou SANDWIDI | restaurant_ctrl.py | [github.com/rafiou](https://github.com/SANDWIDI-Rafiou-beep) |
+| Pulcherie SAWADOGO | file_manager.py | [github.com/pulcherie](https://github.com/sawadogopulcherie544-art) |
+| Aimerance SANA | menu.py | [github.com/aimerance](https://github.com/sanashekiniaaimerence-cmyk) |
+| Eunice SANOU | person.py | [github.com/eunice](https://github.com/eunicesanou099-arch) |
+| Oumou SAVADOGO | reservation.py | [github.com/oumou](https://github.com/oumou-savadogo) |
