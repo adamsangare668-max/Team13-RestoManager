@@ -155,10 +155,10 @@ Every group member has a personal GitHub profile and has contributed significant
 
 | Name | Role / Domain | Main File | GitHub Profile |
 | :--- | :--- | :--- | :--- |
-| **SANGARE Adam** | Group Leader — User Interface and Main Entry Point | `main.py` | [github.com/adam](https://github.com/adamsangare668-max) |
-| **SANDWIDI Rafiou** | Central Controller and Business Logic | `restaurant_ctrl.py` | [github.com/rafiou](https://github.com/SANDWIDI-Rafiou-beep) |
+| **SANGARE Séri Porna Adam** | Group Leader — User Interface and Main Entry Point | `main.py` | [github.com/adam](https://github.com/adamsangare668-max) |
+| **SANDWIDI Abdoul Rafiou** | Central Controller and Business Logic | `restaurant_ctrl.py` | [github.com/rafiou](https://github.com/SANDWIDI-Rafiou-beep) |
 | **SAWADOGO Pulchérie** | Data Persistence and File I/O | `file_manager.py` | [github.com/pulcherie](https://github.com/sawadogopulcherie544-art) |
-| **SANA Aimerance** | Menu and Catalog Modeling | `menu.py` | [github.com/aimerance](https://github.com/sanashekiniaaimerence-cmyk) |
+| **SANA Shekinia Aimerance** | Menu and Catalog Modeling | `menu.py` | [github.com/aimerance](https://github.com/sanashekiniaaimerence-cmyk) |
 | **SANOU Eunice** | Basic Design and User Management | `person.py` | [github.com/eunice](https://github.com/eunicesanou099-arch) |
 | **SAVADOGO Oumou** | Reservation and Table Logic | `reservation.py` | [github.com/oumou](https://github.com/oumou-savadogo) |
 
@@ -170,7 +170,7 @@ Every group member has a personal GitHub profile and has contributed significant
 * **File:** `person.py`
 * **Contribution:** She designed and wrote the core user structures. She implemented the parent class `Person` and its child classes (`Customer` and `Staff`), ensuring the mandatory **Inheritance** principle. She also handled the **Encapsulation** of sensitive user details.
 
-#### 2. SANA Aimerance — Menu & Catalog Modeling
+#### 2. SANA Shekinia Aimerence — Menu & Catalog Modeling
 * **File:** `menu.py`
 * **Contribution:** She constructed the restaurant's menu catalog system. She created the `Menu` and `MenuItem` classes to handle food items and drinks. Her code manages dynamic price displays and item instantiations.
 
@@ -182,10 +182,10 @@ Every group member has a personal GitHub profile and has contributed significant
 * **File:** `file_manager.py`
 * **Contribution:** She built the entire data persistence infrastructure. She structured the `FileManager` class to handle reading from and writing to external text files using JSON format, ensuring that reservations and orders are retained across sessions.
 
-#### 5. SANDWIDI Rafiou — Central Controller (Business Logic)
+#### 5. SANDWIDI Abdoul Rafiou — Central Controller (Business Logic)
 * **File:** `restaurant_ctrl.py`
 * **Contribution:** He designed the "brain" of the application by developing the `Restaurant` controller class. He successfully applied **Abstraction** by hiding all complex background tasks (file syncing, checking operational hours) behind clean, top-level methods.
 
-#### 6. SANGARE Adam — User Interface, Main Entry & Project Lead
+#### 6. SANGARE Séri Porna Adam — User Interface, Main Entry & Project Lead
 * **File:** `main.py`
 * **Contribution:** As the **Group Leader**, he coordinated the global software architecture, managed the GitHub repository workflows, and enforced PEP 8 standards. Technically, he built the final execution script (`main.py`), including the main interactive loop (`while loop`), user inputs with type conversion, and f-string formatted receipts.
